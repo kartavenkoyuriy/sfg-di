@@ -1,19 +1,17 @@
 package edu.sfg.sfgdi.controllers;
 
-import edu.sfg.sfgdi.services.GreetingServiceImpl;
+import edu.sfg.sfgdi.services.ConstructorInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class PropertyInjectedControllerTest {
 
-    PropertyInjectedController propertyInjectedController;
+    private PropertyInjectedController propertyInjectedController;
 
     @BeforeEach
     void setUp() {
         propertyInjectedController = new PropertyInjectedController();
-        propertyInjectedController.greetingService = new GreetingServiceImpl();
+        propertyInjectedController.greetingService = new ConstructorInjectedGreetingService();
     }
 
     @Test
